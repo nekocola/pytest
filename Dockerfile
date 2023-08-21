@@ -1,6 +1,6 @@
 FROM python:3.7
  
-WORKDIR ./python_demo
+WORKDIR ./python_rds
  
 ADD . .
  
