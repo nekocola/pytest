@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    run: python-demo
-  name: python-demo
+    run: python-rds
+  name: python-rds
 spec:
   replicas: 2
   selector:
     matchLabels:
-      run: python-demo
+      run: python-rds
   template:
     metadata:
       labels:
-        run: python-demo
+        run: python-rds
     spec:
       containers:
       - image: ${IMAGE}
-        name: python-demo
+        name: python-rds
