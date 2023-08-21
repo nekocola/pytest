@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import mysql.connector
-
+from gevent import pywsgi
 app = Flask(__name__)
 
 
@@ -66,5 +66,5 @@ def update_user():
     conn.close()
     return redirect(url_for('index'))
 
-if __name__ == '__main__':
-    app.run(debug=True)
+server = pywsgi.WSGIServer(('0.0.0.0',80),app)
+server.serve_forever()
